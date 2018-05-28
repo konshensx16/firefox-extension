@@ -1,0 +1,20 @@
+{
+	"manifest_version": 2,
+	"name": "FzLauncher",
+	"version": "1.0",
+	"description": "Firefox launcher for ERP",
+	"icons": {
+		"48": "icon.png"
+	},
+	"background": {
+		"scripts": ["background.js"]
+	},
+	"permissions": ["storage", "nativeMessaging", "activeTab"],
+	"content_scripts": [
+		{
+			"matches": ["http://erp.wewebcom.fr/*", "https://erp.wewebcom.fr/*"],
+			"js": ["content.js"]
+		}
+	],
+	"browser_action": {}
+}
